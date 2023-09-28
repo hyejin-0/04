@@ -5,23 +5,21 @@
 
 int main(int argc, char *argv[]) 
 {
-	int a;
+	unsigned int x;
+	int b;
 	
-	printf("input a year : ");
-	scanf("%i", &a);
+	printf("input a number :");
+	scanf("%ui", &x);
 	
-	//1. 4로 나누어 떨어져야 함 
-	//2. 100으로 나누어 떨어지지 않아야 함
-	//3. 위를 만족 안 해도 400으로 나누어 떨어짐 
-	
-	if ( ( a%4==0 && a%100!=0 ) || (a%400==0) )
+	for (b=0; x!=0; x >>= 1) // -> x = x >> 1
 	{
-		printf("%i is leap year.\n", a);
-	} 
-	else
-	{
-		printf("%i is not leap year.\n", a);
+		if (x & 1)
+		{
+			b++;
+		}
 	}
+	
+	printf("The reslut is : %i\n", b);
 	
 	return 0;
 }
