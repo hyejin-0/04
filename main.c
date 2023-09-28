@@ -1,25 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+/* run this pr  ogram using the console pauser or add your own getch, system("pause") or input loop */
 
 int main(int argc, char *argv[]) 
 {
-	unsigned int x;
-	int b;
+	int a;
 	
-	printf("input a number :");
-	scanf("%ui", &x);
+	printf("input seconds : ");
+	scanf("%i", &a);
 	
-	for (b=0; x!=0; x >>= 1) // -> x = x >> 1
-	{
-		if (x & 1)
-		{
-			b++;
-		}
-	}
-	
-	printf("The reslut is : %i\n", b);
-	
+	printf("The time for %i second is %i : %i : %i \n", a, a/3600, (a-3600)/60, (a-3600)%60);	
+
 	return 0;
 }
